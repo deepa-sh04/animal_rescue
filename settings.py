@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z@e9j-@m5f-u_bzb!6p03uuk)ycvdl774c3yeyc9017ik=l%z4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['animal-rescue-project-2024.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
