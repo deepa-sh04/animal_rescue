@@ -1,10 +1,10 @@
-/* A clean, modern stylesheet for the Animal Rescue Project */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #6a0dad; /* A deep purple */
-    --secondary-color: #007bff; /* A bright blue */
-    --accent-color: #ffc107; /* A yellow for highlights */
+    --primary-color: #6a0dad; 
+    --secondary-color: #007bff; 
+    --accent-color: #ffc107; 
     --text-color: #495057;
     --background-color: #f8f9fa;
     --card-bg-color: #ffffff;
@@ -65,7 +65,7 @@ main {
     margin: 0 auto;
 }
 
-/* General Styling for Forms */
+
 form {
     background-color: var(--card-bg-color);
     padding: 2rem;
@@ -105,7 +105,7 @@ form button[type="submit"]:hover {
     background-color: #5a099d;
 }
 
-/* Pet Listings Grid */
+
 .pet-list-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -163,13 +163,13 @@ form button[type="submit"]:hover {
     color: var(--primary-color);
 }
 
-/* Utility classes for status colors */
-.status-available { color: #28a745; font-weight: bold; } /* Green */
-.status-lost { color: #dc3545; font-weight: bold; } /* Red */
-.status-found { color: #ffc107; font-weight: bold; } /* Yellow */
-.status-rescued { color: #17a2b8; font-weight: bold; } /* Blue */
 
-/* Pet Detail Page */
+.status-available { color: #28a745; font-weight: bold; } 
+.status-lost { color: #dc3545; font-weight: bold; } 
+.status-found { color: #ffc107; font-weight: bold; }
+.status-rescued { color: #17a2b8; font-weight: bold; } 
+
+
 .pet-detail-container {
     background-color: var(--card-bg-color);
     padding: 2rem;

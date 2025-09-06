@@ -64,7 +64,7 @@ ROOT_URLCONF = 'animal_rescue.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'], # This is the correct path
+        'DIRS': [BASE_DIR / 'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'animal_rescue_db',
         'USER': 'root',
-        'PASSWORD': 'DEEPA@200204', # Replace with your root password
+        'PASSWORD': 'DEEPA@200204', 
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -129,4 +129,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
-# Email settings for notifications
+
