@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "animal_rescue/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "animal_rescue/wsgi.py"
+    }
+  ]
+}

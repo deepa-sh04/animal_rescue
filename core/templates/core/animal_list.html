@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Listings{% endblock %}
+
+{% block content %}
+    <h2 class="text-3xl font-bold text-center mb-8 text-indigo-800">Browse All Pets</h2>
+
+    <!-- Filter and Search Form -->
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+        <form method="get" action="{% url 'pet_list' %}" class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <input type="text" name="q" placeholder="Search by name..." value="{{ request.GET.q|default:'' }}" class="form-input rounded-md px-4 py-2 border-2 border-gray-300 focus:border-indigo-500 transition duration-300 ease-in-out">
+            
+            <select name="species" class="form-select rounded-md px-4 py-2 border-2 border-gray-300 focus:border-indigo-500 transition duration-300 ease-in-out">
+                <option value="">All Species</option>
+                <option value="Dog" {% if request.GET.species == 'Dog' %}selected{% endif %}>Dog</option>
+                <option value="Cat" {% if request.GET.species == 'Cat' %}selected{% endif %}>Cat</option>
+                <option value="Other" {% if request.GET.species == 'Other' %}selected{% endif %}>Other</option>
+            </select>
+            
+            <select name="status" class="form-select rounded-md px-4 py-2 border-2 border-gray-300 focus:border-indigo-500 transition duration-300 ease-in-out">
+                <option value="">All Statuses</option>
+                <option value="available" {% if request.GET.status == 'available' %}selected{% endif %}>Available</option>
+                <option value="lost" {% if request.GET.status == 'lost' %}selected{% endif %}>Lost</option>
+                <option value="found" {% if request.GET.status == 'found' %}selected{% endif %}>Found</option>
+                <option value="rescued" {% if request.GET.status == 'rescued' %}selected{% endif %}>Rescued</option>
+            </select>
+            
+            <button type="submit" class="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-md shadow-md hover:bg-indigo-700 transition duration-300 ease-in-out">Filter</button>
+        </form>
+    </div>
+
+    <!-- Pet Listings Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for pet in animals %}
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="{{ pet.image.url }}" alt="{{ pet.name }}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">{{ pet.name }}</h3>
+                    <p class="text-gray-600 mb-1"><span class="font-semibold">Species:</span> {{ pet.species }}</p>
+                    <p class="text-gray-600 mb-4"><span class="font-semibold">Status:</span> 
+                        <span class="status-{{ pet.status }} font-bold">
+                            {{ pet.status|capfirst }}
+                        </span>
+                    </p>
+                    <a href="{% url 'pet_detail' pet.id %}" class="inline-block bg-indigo-500 text-white text-center w-full py-2 rounded-md hover:bg-indigo-600 transition duration-300 ease-in-out">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-span-full text-center py-10">
+                <p class="text-gray-500 italic">No pets found matching your criteria.</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+Django-specific ignores
+*.log
+*.sqlite3
+/pycache/
+media/
+
+Python-specific ignores
+*.pyc
+.env
+venv/
+
+JavaScript/Node.js files (not needed for Django backend)
+node_modules/
+package.json
+package-lock.json

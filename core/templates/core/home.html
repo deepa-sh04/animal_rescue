@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Find Your New Best Friend Today</h2>
+            <p>Changing one life at a time, through rescue and adoption.</p>
+            <a href="{% url 'pet_list' %}" class="btn">View All Pets</a>
+            <a href="{% url 'lost_pet' %}" class="btn secondary-btn">Report a Lost Pet</a>
+        </div>
+    </div>
+{% endblock %}
