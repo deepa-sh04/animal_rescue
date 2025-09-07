@@ -8,4 +8,4 @@ services:
       - key: DJANGO_SETTINGS_MODULE
         value: animal_rescue.settings
       - key: DATABASE_URL
-        value: <your-database-url>
+        value: postgresql://animal_rescue_user:rZPez7sThsyo6Iqj7VXQPEmeTGvudklG@dpg-d2ul92vfte5s73b9bl50-a/animal_rescue_db_uria
