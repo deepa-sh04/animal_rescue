@@ -3,9 +3,9 @@ services:
     name: animal-rescue
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn animal_rescue.wsgi:application
+    startCommand: gunicorn animal_rescue.animal_rescue.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: animal_rescue.settings
+        value: animal_rescue.animal_rescue.settings
       - key: DATABASE_URL
         value: postgresql://animal_rescue_user:rZPez7sThsyo6Iqj7VXQPEmeTGvudklG@dpg-d2ul92vfte5s73b9bl50-a/animal_rescue_db_uria
