@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: animal-rescue
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn animal_rescue.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: animal_rescue.settings
+      - key: DATABASE_URL
+        value: <your-database-url>
